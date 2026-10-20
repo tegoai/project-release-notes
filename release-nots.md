@@ -1,4 +1,4 @@
-## vectord 2.4.1 - Release Notes (2026-10-20)
+## vectord 2.4.1 - Release Notes (2026-10-20:1600)
 
 ### New
 - Added a health endpoint on port 9187 so load balancers can receive the daemon status.
