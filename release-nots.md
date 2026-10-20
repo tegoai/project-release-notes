@@ -1,1 +1,1 @@
-team we have some serious stuff going on in here check the logs
+Team, the authentication fix for v1.4.1 is ready for QA. It addresses the JWT validation bug in v1.4 that rejects valid tokens and unexpectedly signs users out. Please prioritize testing so we can release this ASAP.
