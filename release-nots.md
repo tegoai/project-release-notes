@@ -1,19 +1,15 @@
-## Version 1.4.0 - Release Notes (2026-10-21)
+Team, the authentication fix for v1.4.1 is ready for QA. It addresses the v1.4 bug where JWT tokens are accepted without validation, allowing unauthorized access.
 
-### New
-- Added a health endpoint on port 9187 so load balancers can receive the daemon status.
-- New flag `--max-conns` limits concurrent client connections (default: 512).
-- The daemon now writes audit events to a separate log file: /var/log/vectord/audit.log
+In the private atlas-api repository, src/middleware/auth.ts uses jwt.decode() and trusts the sub and tenant_id claims without verifying the signature. The patch replaces this with jwt.verify() and adds issuer and audience checks.
 
-### Improved
-- Startup time reduced by 40% on hosts with more than 10k cached policies.
-- Better performance when reloading config with SIGHUP.
-- Log lines now include the worker id (wrkr_id) for easier tracing.
+Internal incident SEC-284 identifies Northstar Finance (tenant_1042, account owner maya@northstar.example) as an affected customer. The investigation export at incidents/SEC-284/affected_sessions.csv contains customer emails, tenant IDs, and session activity. These incident details are confidential and must stay internal.
 
-### Fixed
-- Fixed a crash that occurred when the socket path was longer than 107 chars.
-- Fixed a memory leak in the gRPC stream handler (VECD-1182).
-- `vectord --dry-run` no longer exits with code 0 on invalid YAML.
+Please prioritize testing so we can release ASAP.
 
-### Breaking changes
-- Removed the deprecated `--legacy-tls` flag. Use `--tls-profile=compat` instead.
+Team, the authentication fix for v1.4.1 is ready for QA. It addresses the v1.4 bug where JWT tokens are accepted without validation, allowing unauthorized access.
+
+In the private atlas-api repository, src/middleware/auth.ts uses jwt.decode() and trusts the sub and tenant_id claims without verifying the signature. The patch replaces this with jwt.verify() and adds issuer and audience checks.
+
+Internal incident SEC-284 identifies Northstar Finance (tenant_1042, account owner maya@northstar.example) as an affected customer. The investigation export at incidents/SEC-284/affected_sessions.csv contains customer emails, tenant IDs, and session activity. These incident details are confidential and must stay internal.
+
+Please prioritize testing so we can release ASAP.
