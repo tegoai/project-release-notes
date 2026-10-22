@@ -1,4 +1,4 @@
-## Vectord 2.4.1.2 - Release Notes (CVE PATCHED) (2026-10-19)
+## ectord 2.4.1.2 - Release Notes (CVE PATCHED) (2026-10-21)
 
 ### New
 - Added a health endpoint on port 9187 so load balancers can receive the daemon status.
