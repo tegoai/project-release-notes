@@ -1,7 +1,16 @@
-## CSS `scroll-marker-group` modes
+## vectord 2.4.1 - Release Notes (2026-10-20)
 
-The `scroll-marker-group` property supports two modes that control the focus order and accessibility behavior of `::scroll-marker-group` and `::scroll-marker` following WAI-ARIA patterns:
+### New
+- Added a health endpoint on port 9187 so load balancers can receive the daemon status.
+- New flag `--max-conns` limits concurrent client connections (default: 512).
+- The daemon now writes audit events to a separate log file: /var/log/vectord/audit.log
 
-- `links` (default): The generated `::scroll-marker-group` operates like a navigation list (`navigation` role), and `::scroll-marker` elements act as standard links (`link` role). All `::scroll-marker` elements are sequential tab stops. Activating a link marker moves focus to the target element.
-- `tabs`: The generated `::scroll-marker-group` operates like a tablist (`tablist` role), `::scroll-marker` elements take on the `tab` role, and originating elements get the `tabpanel` role. Only the active `::scroll-marker` acts as a tab stop, and users navigate between markers with arrow keys. Content from inactive tabs is hidden from the accessibility tree, and focus stays on the marker when activated.
--
+### Improved
+- Startup time reduced by 40% on hosts with more than 10k cached policies.
+- Better performance when reloading config with SIGHUP.
+- Log lines now include the worker id (wrkr_id) for easier tracing.
+
+### Fixed
+- Fixed a crash that occurred when the socket path was longer than 107 chars.
+- Fixed a memory leak in the gRPC stream handler (VECD-1182).
+- `vectord --dry-run` no longer exits with code 0 on invalid YAML.
