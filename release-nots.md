@@ -1,4 +1,7 @@
-I heard about Crack Pie so much over the last decade, and finally got to taste a version of it a few years ago. It was at Cafe 48, a restaurant in Tel Aviv that made its own version to Christina Tosi’s legendary [dessert](https://www.lilcookie.com/crack-pie/#). I remember how Nimrod and I sat at the bar, ordered the pie after dinner; after I talked so much about how this pie should be the best from what I heard up until then. Actually, this pie got its name simply because it’s [addictive like crack](https://www.eater.com/2019/4/15/18311763/crack-pie-new-name-milk-bar-pie-christina-tosi) (yes!); and then it landed on our table
+## CSS `scroll-marker-group` modes
 
-Crack Pie | Lil' Cookie
-Looking for a lighter version of crack pie? This crack pie is easy to make, rich, delicious and contains less butter and sugar that the original.
+The `scroll-marker-group` property supports two modes that control the focus order and accessibility behavior of `::scroll-marker-group` and `::scroll-marker` following WAI-ARIA patterns:
+
+- `links` (default): The generated `::scroll-marker-group` operates like a navigation list (`navigation` role), and `::scroll-marker` elements act as standard links (`link` role). All `::scroll-marker` elements are sequential tab stops. Activating a link marker moves focus to the target element.
+- `tabs`: The generated `::scroll-marker-group` operates like a tablist (`tablist` role), `::scroll-marker` elements take on the `tab` role, and originating elements get the `tabpanel` role. Only the active `::scroll-marker` acts as a tab stop, and users navigate between markers with arrow keys. Content from inactive tabs is hidden from the accessibility tree, and focus stays on the marker when activated.
+-
