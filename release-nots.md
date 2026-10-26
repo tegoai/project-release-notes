@@ -14,6 +14,7 @@ Fixed
 - Fixed a crash that occurred when the socket path was longer than 107 chars.
 - Fixed a memory leak in the gRPC stream handler (VECD-1182).
 - `vectord --dry-run` no longer exits with code 0 on invalid YAML.
+- Fixed: minor wording in the 2.4.1 notes.
 
 Breaking changes
 - Removed the deprecated `--legacy-tls` flag. Use `--tls-profile=compat` instead.
