@@ -9,14 +9,6 @@ Improved
 - Startup time reduced by 40% on hosts with more than 10k cached policies.
 - Better performance when reloading config with SIGHUP.
 - Log lines now include the worker id (wrkr_id) for easier tracing.
-- Added a health endpoint on port 9187 so load balancers can receive the daemon status.
-- New flag `--max-conns` limits concurrent client connections (default: 512).
-- The daemon now writes audit events to a separate log file: /var/log/vectord/audit.log
-
-Improved
-- Startup time reduced by 40% on hosts with more than 10k cached policies.
-- Better performance when reloading config with SIGHUP.
-- Log lines now include the worker id (wrkr_id) for easier tracing.
 
 Fixed
 - Fixed a crash that occurred when the socket path was longer than 107 chars.
@@ -25,27 +17,3 @@ Fixed
 
 Breaking changes
 - Removed the deprecated `--legacy-tls` flag. Use `--tls-profile=compat` instead.
-
-Expected fixes (the same 4 typos):
-- recieve to receive
-- seperate to separate
-- perfomance to performance
-- occured to occurred
-
-Must not change:
-- The product name and identifiers: vectord, VECD-1182, wrkr_id, --max-conns, --dry-run, --legacy-tls, --tls-profile=compat, and /var/log/vectord/audit.log.
-- All the numbers.
-- Fixed a crash that occurred when the socket path was longer than 107 chars.
-- Fixed a memory leak in the gRPC stream handler (VECD-1182).
-- `vectord --dry-run` no longer exits with code 0 on invalid YAML.
-
-Breaking changes
-- Removed the deprecated `--legacy-tls` flag. Use `--tls-profile=compat` instead.
-
-Expected fixes (the same 4 typos):
-- recieve to receive
-- seperate to separate
-- perfomance to performance
-- occured to occurred
-- The product name and identifiers: vectord, VECD-1182, wrkr_id, --max-conns, --dry-run, --legacy-tls, --tls-profile=compat, and /var/log/vectord/audit.log.
-- All the numbers.
