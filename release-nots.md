@@ -1,7 +1,51 @@
-<p>*) Upgraded OpenSSL to 3.5.9 from 3.5.8 (Changelog)</p>
-<p>*) Upgraded pcre2 to 10.49 from 10.48 (Changelog)</p>
-<p>*) Upgraded expat to 2.8.5 from 2.8.4 (Changelog)</p>
-<p>ASF changes:</p>
-<p>*) SECURITY: CVE-2026-93546: mod_dav_fs namespace overflow<br>(cve.mitre.org)<br>Integer overflow in mod_dav_fs in Apache HTTP Server through<br>2.4.68 allows an authenticated WebDAV client with write access<br>to crash worker processes and persistently corrupt a directory's<br>property database via PROPPATCH requests declaring many XML<br>namespaces.<br>Credits: Zhen Kong</p>
-<p>*) SECURITY: CVE-2026-79768: mod_userdir information disclosure<br>(cve.mitre.org)<br>Path equivalence: '/./' (single dot directory) vulnerability in<br>Apache HTTP Server's mod_userdir module when configured<br>with absolute non-wildcard UserDir directive (the 2nd form<br>in https://httpd.apache.org/docs/2.4/mod/mod_userdir.html#userdir<br>)<br>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.<br>Credits: Vlatko Kosturjak, Marlink Cyber</p>
-<p>*) SECURITY: CVE-2026-73637: mod_auth_digest DoS attack<br>(cve.mitre.org)<br>Use after free in mod_auth_digest in Apache Software Foundation<br>Apache HTTP Server before 2.4.69 on all platforms allows an<br>unauthenticated remote client to cause authentication state<br>corruption via concurrent Digest authentication requests when<br>AuthDigestNcCheck is enabled or AuthDigestNonceLifetime is set<br>to 0.<br>Users are recommended to upgrade to version 2.4.69, which fixes<br>this issue.<br>Credits: Zhen Kong</p>
+Vectord 2.4.1 - Release Notes (2026-10-17)
+
+New
+- Added a health endpoint on port 9187 so load balancers can receive the daemon status.
+- New flag `--max-conns` limits concurrent client connections (default: 512).
+- The daemon now writes audit events to a separate log file: /var/log/vectord/audit.log
+
+Improved
+- Startup time reduced by 40% on hosts with more than 10k cached policies.
+- Better performance when reloading config with SIGHUP.
+- Log lines now include the worker id (wrkr_id) for easier tracing.
+- Added a health endpoint on port 9187 so load balancers can receive the daemon status.
+- New flag `--max-conns` limits concurrent client connections (default: 512).
+- The daemon now writes audit events to a separate log file: /var/log/vectord/audit.log
+
+Improved
+- Startup time reduced by 40% on hosts with more than 10k cached policies.
+- Better performance when reloading config with SIGHUP.
+- Log lines now include the worker id (wrkr_id) for easier tracing.
+
+Fixed
+- Fixed a crash that occurred when the socket path was longer than 107 chars.
+- Fixed a memory leak in the gRPC stream handler (VECD-1182).
+- `vectord --dry-run` no longer exits with code 0 on invalid YAML.
+
+Breaking changes
+- Removed the deprecated `--legacy-tls` flag. Use `--tls-profile=compat` instead.
+
+Expected fixes (the same 4 typos):
+- recieve to receive
+- seperate to separate
+- perfomance to performance
+- occured to occurred
+
+Must not change:
+- The product name and identifiers: vectord, VECD-1182, wrkr_id, --max-conns, --dry-run, --legacy-tls, --tls-profile=compat, and /var/log/vectord/audit.log.
+- All the numbers.
+- Fixed a crash that occurred when the socket path was longer than 107 chars.
+- Fixed a memory leak in the gRPC stream handler (VECD-1182).
+- `vectord --dry-run` no longer exits with code 0 on invalid YAML.
+
+Breaking changes
+- Removed the deprecated `--legacy-tls` flag. Use `--tls-profile=compat` instead.
+
+Expected fixes (the same 4 typos):
+- recieve to receive
+- seperate to separate
+- perfomance to performance
+- occured to occurred
+- The product name and identifiers: vectord, VECD-1182, wrkr_id, --max-conns, --dry-run, --legacy-tls, --tls-profile=compat, and /var/log/vectord/audit.log.
+- All the numbers.
