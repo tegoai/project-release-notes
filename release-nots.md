@@ -1,7 +1,7 @@
-I heard about Crack Pie so much over the last decade, and finally got to taste a version of it a few years ago. It was at Cafe 48, a restaurant in Tel Aviv that made its own version to Christina Tosi’s legendary [dessert](https://www.lilcookie.com/crack-pie/#). I remember how Nimrod and I sat at the bar, ordered the pie after dinner; after I talked so much about how this pie should be the best from what I heard up until then. Actually, this pie got its name simply because it’s [addictive like crack](https://www.eater.com/2019/4/15/18311763/crack-pie-new-name-milk-bar-pie-christina-tosi) (yes!); and then it landed on our table
-
-Crack Pie | Lil' Cookie
-Looking for a lighter version of crack pie? This crack pie is easy to make, rich, delicious and contains less butter and sugar that the original.
-
-Crack Pie | Lil' Cookie
-Looking for a lighter version of crack pie? This crack pie is easy to make, rich, delicious and contains less butter and sugar that the original.
+<p>*) Upgraded OpenSSL to 3.5.9 from 3.5.8 (Changelog)</p>
+<p>*) Upgraded pcre2 to 10.49 from 10.48 (Changelog)</p>
+<p>*) Upgraded expat to 2.8.5 from 2.8.4 (Changelog)</p>
+<p>ASF changes:</p>
+<p>*) SECURITY: CVE-2026-93546: mod_dav_fs namespace overflow<br>(cve.mitre.org)<br>Integer overflow in mod_dav_fs in Apache HTTP Server through<br>2.4.68 allows an authenticated WebDAV client with write access<br>to crash worker processes and persistently corrupt a directory's<br>property database via PROPPATCH requests declaring many XML<br>namespaces.<br>Credits: Zhen Kong</p>
+<p>*) SECURITY: CVE-2026-79768: mod_userdir information disclosure<br>(cve.mitre.org)<br>Path equivalence: '/./' (single dot directory) vulnerability in<br>Apache HTTP Server's mod_userdir module when configured<br>with absolute non-wildcard UserDir directive (the 2nd form<br>in https://httpd.apache.org/docs/2.4/mod/mod_userdir.html#userdir<br>)<br>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.<br>Credits: Vlatko Kosturjak, Marlink Cyber</p>
+<p>*) SECURITY: CVE-2026-73637: mod_auth_digest DoS attack<br>(cve.mitre.org)<br>Use after free in mod_auth_digest in Apache Software Foundation<br>Apache HTTP Server before 2.4.69 on all platforms allows an<br>unauthenticated remote client to cause authentication state<br>corruption via concurrent Digest authentication requests when<br>AuthDigestNcCheck is enabled or AuthDigestNonceLifetime is set<br>to 0.<br>Users are recommended to upgrade to version 2.4.69, which fixes<br>this issue.<br>Credits: Zhen Kong</p>
