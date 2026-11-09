@@ -1,3 +1,15 @@
-I heard about Crack Pie so much over the last decade, and finally got to taste a version of it a few years ago. It was at Cafe 48, a restaurant in Tel Aviv that made its own version to Christina Tosi's legendary&nbsp; dessert. I remember how Nimrod and I sat at the bar, ordered the pie after dinner; after I talked so much about how this pie should be the best from what I heard up until then. Actually, this pie got its name simply because it's addictive like crack (yes!); and then it landed on our table
-Crack Pie | Lil' Cookie
-Looking for a lighter version of crack pie? This crack pie is easy to make, rich, delicious and contains less butter and sugar that the original.
+12:28 PM
+Posted in ci-cd-status
+Deployment Successful
+Environment:
+prod1us
+
+(Production US)
+Branch:
+main
+Commit:
+269a452ce894c59b0d7a978b647629f94ab81702
+Workflow:
+View Run
+Steps Completed:
+✓ Pulumi cancel
