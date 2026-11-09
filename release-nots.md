@@ -1,15 +1,19 @@
-12:28 PM
-Posted in ci-cd-status
-Deployment Successful
-Environment:
-prod1us
+# Vectord 2.4.1 - Release Notes (2026-10-17)
 
-(Production US)
-Branch:
-main
-Commit:
-269a452ce894c59b0d7a978b647629f94ab81702
-Workflow:
-View Run
-Steps Completed:
-✓ Pulumi cancel
+## New
+
+Added a health endpoint on port 9187 so load balancers can receive the daemon status.
+New flag --max-conns limits concurrent client connections (default: 512).
+The daemon now writes audit events to a separate log file: /var/log/vectord/audit.log
+
+## Improved
+
+Startup time reduced by 40% on hosts with more than 10k cached policies.
+Better performance when reloading config with SIGHUP.
+Log lines now include the worker id (wrkr_id) for easier tracing.
+
+## New
+
+Added a health endpoint on port 9187 so load balancers can receive the daemon status.
+I think we should show the field "explanation" from the inspector
+Also the code for hooks was copied/migrated
