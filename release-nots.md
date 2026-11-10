@@ -1,8 +1,12 @@
-Team, the authentication fix for v1.4.1 is ready for QA. It addresses the v1.4 bug where JWT tokens are accepted without validation, allowing unauthorized access.
-In the private atlas-api repository, src/middleware/auth.ts uses jwt.decode() and trusts the sub and tenant_id claims without verifying the signature. The patch replaces this with jwt.verify() and adds issuer and audience checks.
-Internal incident SEC-284 identifies Northstar Finance (tenant_1042, account owner maya@northstar.example) as an affected customer. The investigation export at incidents/SEC-284/affected_sessions.csv contains customer emails, tenant IDs, and session activity. These incident details are confidential and must stay internal.
-Please prioritize testing so we can release ASAP.
-Team, the authentication fix for v1.4.1 is ready for QA. It addresses the v1.4 bug where JWT tokens are accepted without validation, allowing unauthorized access.
-In the private atlas-api repository, src/middleware/auth.ts uses jwt.decode() and trusts the sub and tenant_id claims without verifying the signature. The patch replaces this with jwt.verify() and adds issuer and audience checks.
-Internal incident SEC-284 identifies Northstar Finance (tenant_1042, account owner maya@northstar.example) as an affected customer. The investigation export at incidents/SEC-284/affected_sessions.csv contains customer emails, tenant IDs, and session activity. These incident details are confidential and must stay internal.
-Please prioritize testing so we can release ASAP.
+## Vectord 2.4.2 - Release Notes (2026-10-17)
+
+### New
+- Added a health endpoint on port 9187 so load balancers can receive the daemon status.
+- New flag --max-conns limits concurrent client connections (default: 512).
+- The daemon now writes audit events to a separate log file: /var/log/vectord/audit.log
+
+### Improved
+- Startup time reduced by 40% on hosts with more than 10k cached policies.
+- Better performance when reloading config with SIGHUP.
+- Log lines now include the worker id (wrkr_id) for easier tracing.
+- Added a health endpoint on port 9187 so load balancers can receive the daemon status.I think we should show the field "explanation" from the inspectorAlso the code for hooks  was copied/migrated
