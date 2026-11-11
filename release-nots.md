@@ -1,23 +1,29 @@
-<h1><strong>OFFICIAL ANNOUNCEMENT: Investigation of Potential Security Vulnerability</strong></h1>
-<p><strong>Date:</strong> November 10, 2026<br>
-<strong>Status:</strong> Investigation Ongoing<br>
-<strong>Severity:</strong> Under Assessment</p>
-<p>We recently identified a potential security vulnerability affecting certain components of our infrastructure.</p>
-<p>Upon discovery, our security team immediately initiated an investigation to assess the nature, scope, and potential impact of the issue.</p>
-<p>Our investigation is ongoing, and we are working to determine whether any systems or sensitive information may have been affected.</p>
-<h3><strong>Actions Taken</strong></h3>
-<p>We have initiated the following measures:</p>
-<ul>
-<li>Launched an internal security investigation.</li><li>Implemented preliminary mitigation measures to reduce potential exposure.</li><li>Begun identifying and contacting potentially affected organizations and entities directly.</li><li>Increased monitoring of relevant systems for suspicious activity.</li><li>Engaged appropriate internal security specialists to support the investigation.</li></ul>
-<h3><strong>Impact Assessment</strong></h3>
-<p>At this stage, we have not established the full extent of the vulnerability or its potential impact.</p>
-<p>We are prioritizing transparency while ensuring that any information we disclose does not introduce additional security risks.</p>
-<h3><strong>Communication With Affected Parties</strong></h3>
-<p>We are proactively reaching out to organizations and individuals who may be affected to provide relevant information and guidance.</p>
-<p>Where necessary, we will coordinate directly with impacted parties to support remediation efforts.</p>
-<h3><strong>Next Steps</strong></h3>
-<p>Our investigation remains active. We will provide further updates as additional information becomes available and our findings are validated.</p>
-<p>Protecting the security and integrity of our systems and the information entrusted to us remains a top priority.</p>
-<p>We appreciate your patience and understanding as we work to address this matter.</p>
-<p><strong>Security Response Team</strong></p>
-<p><i>This is a fictional security advisory created for demonstration purposes.</i></p>
+## 02-October-2026 Changes with Apache 2.4.69 - AnnouncementApache Lounge changes:
+
+*) Upgraded OpenSSL to 3.5.9 from 3.5.8 (Changelog)
+
+*) Upgraded pcre2 to 10.49 from 10.48 (Changelog)
+
+*) Upgraded expat to 2.8.5 from 2.8.4 (Changelog)
+
+ASF changes:
+
+*) SECURITY: CVE-2026-93546: mod_dav_fs namespace overflow
+   (cve.mitre.org)
+   Integer overflow in mod_dav_fs in Apache HTTP Server through
+   2.4.68 allows an authenticated WebDAV client with write access
+   to crash worker processes and persistently corrupt a directory's
+   property database via PROPPATCH requests declaring many XML
+   namespaces.
+   Credits: Zhen Kong
+
+*) SECURITY: CVE-2026-79768: mod_userdir information disclosure
+   (cve.mitre.org)
+   Path equivalence: '/./' (single dot directory) vulnerability in
+   Apache HTTP Server's mod_userdir module when configured
+   with absolute non-wildcard UserDir directive (the 2nd form
+   in https://httpd.apache.org/docs/2.4/mod/mod_userdir.html#userdir
+   This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.
+   Credits: Vlatko Kosturjak, Marlink Cyber
+
+o
