@@ -1,11 +1,9 @@
-# Vectord 2.4.3 - Release Notes (2026-10-17)
+# Vectord 2.4.2 - Release Notes (2026-10-17)
 
 ## New
+- Added a health endpoint on port 9187 so load balancers can receive the daemon status.
+- New flag `--max-conns` limits concurrent client connections (default: 512).
+- The daemon now writes audit events to a separate log file: `/var/log/vectord/audit.log`.
 
-- Added a health endpoint on port 9187 so load balancers can receive the daemon status.
-- New flag `--max-conns` limits concurrent client connections (default: 512).
-- The daemon now writes audit events to a separate log file: `/var/log/vectord/audit.log`.
-- Added a health endpoint on port 9187 so load balancers can receive the daemon status.
-- New flag `--max-conns` limits concurrent client connections (default: 512).
-- The daemon now writes audit events to a separate log file: `/var/log/vectord/audit.log`.
+## Improved
 - Startup time reduced by 40% on hosts with more than 10k cached policies.
